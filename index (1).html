@@ -1,0 +1,1908 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Infrastructure &amp; R&amp;B ERP System - Professional Presentation</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+    
+    :root {
+      --primary-blue: #0F4C81;
+      --primary-teal: #1FB8CD;
+      --accent-orange: #FF6B35;
+      --accent-gold: #FFD23F;
+      --dark-navy: #0A2540;
+      --light-gray: #F7F9FC;
+      --text-dark: #1A1A1A;
+      --text-medium: #4A5568;
+      --gradient-primary: linear-gradient(135deg, #0F4C81 0%, #1FB8CD 100%);
+      --gradient-accent: linear-gradient(135deg, #FF6B35 0%, #FFD23F 100%);
+      --gradient-dark: linear-gradient(135deg, #0A2540 0%, #1A3A52 100%);
+      --gradient-light: linear-gradient(135deg, #E0F2FE 0%, #FFFFFF 100%);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #E5E7EB;
+      overflow-x: hidden;
+      color: var(--text-dark);
+    }
+
+    .presentation-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 30px 20px;
+    }
+
+    .slide {
+      display: none;
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: white;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+      position: relative;
+      /* overflow: hidden; */
+      border-radius: 16px;
+      animation: slideIn 0.5s ease-out;
+    }
+
+    .slide.active {
+      display: block;
+    }
+
+    .contact-slide.active {
+      display: flex;
+    }
+
+    .title-slide.active {
+      display: flex;
+    }
+
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Title Slide */
+    .title-slide {
+      background: var(--gradient-primary);
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 80px 60px;
+      text-align: center;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .title-slide::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -10%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .title-slide h1 {
+      font-size: 4em;
+      margin-bottom: 25px;
+      font-weight: 800;
+      line-height: 1.15;
+      text-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      position: relative;
+      z-index: 1;
+    }
+
+    .title-slide .subtitle {
+      font-size: 1.6em;
+      margin-bottom: 50px;
+      opacity: 0.95;
+      font-weight: 400;
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+    }
+
+    .logo-placeholder {
+      width: 180px;
+      height: 100px;
+      background: rgba(255,255,255,0.15);
+      border: 3px dashed rgba(255,255,255,0.4);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.95em;
+      margin-top: 30px;
+      position: relative;
+      z-index: 1;
+      backdrop-filter: blur(10px);
+    }
+
+    /* Header Bar */
+    .slide-header-bar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 8px;
+      background: var(--gradient-primary);
+    }
+
+    .slide-branding {
+      position: absolute;
+      top: 25px;
+      right: 40px;
+      padding: 10px 20px;
+      background: rgba(255,255,255,0.95);
+      border-radius: 8px;
+      border: 2px dashed var(--primary-teal);
+      font-size: 0.75em;
+      color: var(--text-medium);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    /* Content Slides */
+    .content-slide {
+      padding: 70px 90px 80px;
+      background: linear-gradient(135deg, #FFFFFF 0%, #F7F9FC 100%);
+      position: relative;
+    }
+
+    .slide-header {
+      margin-bottom: 45px;
+      position: relative;
+      padding-bottom: 25px;
+    }
+
+    .slide-header::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 120px;
+      height: 5px;
+      background: var(--gradient-primary);
+      border-radius: 3px;
+    }
+
+    .slide-header h2 {
+      font-size: 2.8em;
+      color: var(--dark-navy);
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      line-height: 1.2;
+    }
+
+    .slide-header .icon {
+      color: var(--primary-teal);
+      font-size: 0.9em;
+      filter: drop-shadow(0 2px 4px rgba(31,184,205,0.3));
+    }
+
+    .slide-header .subtitle {
+      font-size: 0.5em;
+      color: var(--text-medium);
+      font-weight: 400;
+      margin-top: 12px;
+      display: block;
+    }
+
+    .content-area {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .bullet-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      padding: 22px 25px;
+      background: white;
+      border-left: 5px solid var(--primary-teal);
+      border-radius: 10px;
+      font-size: 1.05em;
+      color: var(--text-dark);
+      line-height: 1.7;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      transition: all 0.3s ease;
+    }
+
+    .bullet-item:hover {
+      transform: translateX(5px);
+      box-shadow: 0 4px 16px rgba(31,184,205,0.15);
+    }
+
+    .bullet-item .bullet-icon {
+      color: var(--primary-teal);
+      font-size: 1.4em;
+      margin-top: 2px;
+      flex-shrink: 0;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, rgba(31,184,205,0.1) 0%, rgba(31,184,205,0.05) 100%);
+      border-radius: 8px;
+    }
+
+    .bullet-item strong {
+      color: var(--primary-blue);
+      font-weight: 600;
+    }
+
+    /* Two Column Layout */
+    .two-column {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 35px;
+    }
+
+    .column {
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+    }
+
+    .info-card {
+      background: white;
+      padding: 28px;
+      border-radius: 14px;
+      border: 2px solid rgba(31, 184, 205, 0.15);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+      transition: all 0.3s ease;
+    }
+
+    .info-card:hover {
+      border-color: var(--primary-teal);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(31,184,205,0.15);
+    }
+
+    .info-card h3 {
+      color: var(--primary-blue);
+      margin-bottom: 20px;
+      font-size: 1.35em;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+    }
+
+    .info-card h3 .icon {
+      color: var(--primary-teal);
+    }
+
+    .info-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .info-card li {
+      padding: 11px 0;
+      color: var(--text-dark);
+      font-size: 1em;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+
+    .info-card li:last-child {
+      border-bottom: none;
+    }
+
+    .info-card li:before {
+      content: "✓";
+      color: var(--primary-teal);
+      font-weight: bold;
+      font-size: 1.3em;
+      width: 22px;
+      height: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, rgba(31,184,205,0.15) 0%, rgba(31,184,205,0.05) 100%);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* Stats/Numbers Display */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
+      margin-top: 25px;
+    }
+
+    .stat-box {
+      background: white;
+      padding: 32px 24px;
+      border-radius: 16px;
+      text-align: center;
+      border: 2px solid rgba(31,184,205,0.2);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .stat-box::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 5px;
+      background: var(--gradient-primary);
+    }
+
+    .stat-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 24px rgba(31,184,205,0.2);
+      border-color: var(--primary-teal);
+    }
+
+    .stat-box .number {
+      font-size: 2.8em;
+      font-weight: 800;
+      margin-bottom: 12px;
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .stat-box .label {
+      font-size: 1em;
+      color: var(--text-medium);
+      font-weight: 500;
+      line-height: 1.4;
+    }
+
+    /* Timeline */
+    .timeline {
+      position: relative;
+      padding: 25px 0;
+    }
+
+    .timeline-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 25px;
+      margin-bottom: 28px;
+      position: relative;
+    }
+
+    .timeline-marker {
+      width: 52px;
+      height: 52px;
+      background: var(--gradient-primary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 700;
+      font-size: 1.3em;
+      flex-shrink: 0;
+      box-shadow: 0 4px 16px rgba(31, 184, 205, 0.4);
+      border: 4px solid white;
+    }
+
+    .timeline-content {
+      flex: 1;
+      background: white;
+      padding: 24px 28px;
+      border-radius: 12px;
+      border-left: 5px solid var(--primary-teal);
+      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+    }
+
+    .timeline-content h4 {
+      color: var(--primary-blue);
+      margin-bottom: 10px;
+      font-size: 1.25em;
+      font-weight: 700;
+    }
+
+    .timeline-content p {
+      color: var(--text-dark);
+      line-height: 1.6;
+      font-size: 1em;
+    }
+
+    /* Page Number & Footer */
+    .page-number {
+      position: absolute;
+      bottom: 25px;
+      right: 40px;
+      background: var(--gradient-primary);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-weight: 700;
+      font-size: 0.9em;
+      box-shadow: 0 3px 10px rgba(31,184,205,0.3);
+    }
+
+    .progress-bar {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background: rgba(31,184,205,0.15);
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: var(--gradient-primary);
+      transition: width 0.3s ease;
+    }
+
+    /* Navigation */
+    .nav-controls {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 25px;
+      margin-top: 40px;
+      padding: 25px;
+    }
+
+    .nav-btn {
+      background: var(--gradient-primary);
+      color: white;
+      border: none;
+      padding: 14px 35px;
+      border-radius: 30px;
+      font-size: 1em;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      transition: all 0.3s ease;
+      font-weight: 600;
+      box-shadow: 0 4px 16px rgba(31,184,205,0.3);
+      font-family: 'Inter', sans-serif;
+    }
+
+    .nav-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(31, 184, 205, 0.4);
+    }
+
+    .nav-btn:active {
+      transform: translateY(-1px);
+    }
+
+    .nav-btn:disabled {
+      background: #D1D5DB;
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
+
+    .slide-counter {
+      background: white;
+      padding: 14px 32px;
+      border-radius: 30px;
+      font-weight: 700;
+      color: var(--dark-navy);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+      font-size: 1.05em;
+      border: 2px solid rgba(31,184,205,0.2);
+    }
+
+    /* Category Grid */
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+      margin-top: 25px;
+    }
+
+    .category-card {
+      background: white;
+      padding: 28px;
+      border-radius: 14px;
+      border-left: 5px solid var(--primary-teal);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    .category-card h3 {
+      color: var(--primary-blue);
+      font-size: 1.3em;
+      margin-bottom: 18px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .category-card .items {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .category-card .item {
+      padding: 12px 16px;
+      background: linear-gradient(135deg, rgba(31,184,205,0.05) 0%, rgba(31,184,205,0.02) 100%);
+      border-radius: 8px;
+      color: var(--text-dark);
+      font-size: 0.95em;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .category-card .item::before {
+      content: '•';
+      color: var(--primary-teal);
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+
+    /* Cost Breakdown */
+    .cost-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      margin-top: 25px;
+    }
+
+    .cost-item {
+      background: white;
+      padding: 20px 24px;
+      border-radius: 12px;
+      border: 2px solid rgba(31,184,205,0.15);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
+    }
+
+    .cost-item:hover {
+      border-color: var(--primary-teal);
+      transform: translateX(3px);
+    }
+
+    .cost-item .item-name {
+      color: var(--text-dark);
+      font-weight: 600;
+      font-size: 1em;
+    }
+
+    .cost-item .item-cost {
+      color: var(--primary-blue);
+      font-weight: 700;
+      font-size: 1.2em;
+    }
+
+    /* Highlight Box */
+    .highlight-box {
+      background: linear-gradient(135deg, rgba(255,107,53,0.1) 0%, rgba(255,210,63,0.1) 100%);
+      padding: 30px;
+      border-radius: 14px;
+      margin: 25px 0;
+      border: 2px solid rgba(255,107,53,0.3);
+      box-shadow: 0 4px 16px rgba(255,107,53,0.15);
+    }
+
+    .highlight-box h3 {
+      color: var(--primary-blue);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 1.4em;
+      font-weight: 700;
+    }
+
+    .highlight-box h3 .icon {
+      color: var(--accent-orange);
+    }
+
+    .highlight-box p {
+      color: var(--text-dark);
+      line-height: 1.7;
+      font-size: 1.05em;
+    }
+
+    /* Feature Grid */
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+      margin-top: 25px;
+    }
+
+    .feature-card {
+      background: white;
+      padding: 28px 24px;
+      border-radius: 14px;
+      border: 2px solid rgba(31, 184, 205, 0.15);
+      transition: all 0.3s ease;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+    }
+
+    .feature-card:hover {
+      border-color: var(--primary-teal);
+      transform: translateY(-5px);
+      box-shadow: 0 8px 24px rgba(31, 184, 205, 0.2);
+    }
+
+    .feature-card .icon {
+      font-size: 2.8em;
+      color: var(--primary-teal);
+      margin-bottom: 18px;
+      display: block;
+    }
+
+    .feature-card h4 {
+      color: var(--primary-blue);
+      margin-bottom: 12px;
+      font-size: 1.15em;
+      font-weight: 700;
+    }
+
+    .feature-card p {
+      color: var(--text-medium);
+      font-size: 0.95em;
+      line-height: 1.6;
+    }
+
+    /* Module Grid */
+    .module-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-top: 25px;
+    }
+
+    .module-item {
+      background: white;
+      padding: 20px 18px;
+      border-radius: 12px;
+      border: 2px solid rgba(31,184,205,0.15);
+      text-align: center;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    .module-item:hover {
+      border-color: var(--primary-teal);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(31,184,205,0.15);
+    }
+
+    .module-item .icon {
+      font-size: 2.2em;
+      color: var(--primary-teal);
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .module-item h4 {
+      color: var(--primary-blue);
+      font-size: 0.95em;
+      font-weight: 600;
+      line-height: 1.3;
+    }
+
+    /* Contact Slide */
+    .contact-slide {
+      background: var(--gradient-primary);
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 80px 60px;
+      text-align: center;
+      color: white;
+      position: relative;
+    }
+
+    .contact-slide h1 {
+      font-size: 4em;
+      margin-bottom: 40px;
+      font-weight: 800;
+    }
+
+    .contact-info {
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(10px);
+      padding: 40px 50px;
+      border-radius: 20px;
+      border: 2px dashed rgba(255,255,255,0.4);
+      margin-top: 30px;
+    }
+
+    .contact-info h3 {
+      font-size: 1.4em;
+      margin-bottom: 25px;
+      font-weight: 600;
+    }
+
+    .contact-fields {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      text-align: left;
+    }
+
+    .contact-field {
+      background: rgba(255,255,255,0.1);
+      padding: 15px 20px;
+      border-radius: 10px;
+      border: 1px dashed rgba(255,255,255,0.3);
+    }
+
+    .contact-field label {
+      font-size: 0.85em;
+      opacity: 0.8;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .contact-field .value {
+      font-size: 1.1em;
+      font-weight: 600;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .content-slide {
+        padding: 40px 50px;
+      }
+      
+      .slide-header h2 {
+        font-size: 2em;
+      }
+      
+      .title-slide h1 {
+        font-size: 2.5em;
+      }
+      
+      .two-column, .category-grid, .cost-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .feature-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .module-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .feature-grid, .module-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media print {
+      .nav-controls {
+        display: none;
+      }
+      
+      .slide {
+        display: block !important;
+        page-break-after: always;
+        box-shadow: none;
+      }
+    }
+    
+  </style>
+</head>
+<body>
+  <div class="presentation-container" id="presentation">
+    <!-- Slide 1: Title Slide -->
+    <div class="slide active title-slide">
+      <h1>Infrastructure &amp; Roads &amp; Buildings<br>(R&amp;B) ERP System</h1>
+      <div class="subtitle">Comprehensive Solution Overview for Large-Scale Construction Projects</div>
+      <div class="logo-placeholder"><figure style="width: 100%; padding: 0; "><img src="logo.png" width="160px" alt=""></figure></div>
+      <div class="page-number">Slide 1 of 24</div>
+      <div class="progress-bar"><div class="progress-fill" style="width: 4.17%;"></div></div>
+    </div>
+
+    <!-- Slide 2: Executive Summary -->
+    <div class="slide content-slide">
+      <div class="slide-header-bar"></div>
+      <div class="slide-branding"><figure style="width: 100%; padding: 0; "><img src="logo.png" width="160px" alt=""></figure></div>
+      <div class="slide-header">
+        <h2><i class="fas fa-chart-line icon"></i>Executive Summary</h2>
+        <span class="subtitle">Comprehensive ERP for Infrastructure Sector</span>
+      </div>
+      <div class="content-area">
+        <div class="bullet-item">
+          <div class="bullet-icon"><i class="fas fa-expand-arrows-alt"></i></div>
+          <div><strong>Scalable Architecture:</strong> Supports 100 to 10,000+ workers across multiple locations with enterprise-grade infrastructure</div>
+        </div>
+        <div class="bullet-item">
+          <div class="bullet-icon"><i class="fas fa-shield-alt"></i></div>
+          <div><strong>Complete Compliance:</strong> All Indian construction regulations including BOCWA, RERA, Contract Labor Act, and GST</div>
+        </div>
+        <div class="bullet-item">
+          <div class="bullet-icon"><i class="fas fa-users-cog"></i></div>
+          <div><strong>Stakeholder Integration:</strong> Seamless connectivity from ground-level workers to top management with role-based dashboards</div>
+        </div>
+        <div class="bullet-item">
+          <div class="bullet-icon"><i class="fas fa-cube"></i></div>
+          <div><strong>Technology Integration:</strong> Native BIM, CAD integration with Autodesk, Bentley, and Trimble platforms</div>
+        </div>
+        <div class="bullet-item">
+          <div class="bullet-icon"><i class="fas fa-mobile-alt"></i></div>
+          <div><strong>Hybrid Interface:</strong> Powerful web portal and native mobile applications for iOS and Android devices</div>
+        </div>
+      </div>
+      <div class="page-number">Slide 2 of 24</div>
+      <div class="progress-bar"><div class="progress-fill" style="width: 8.33%;"></div></div>
+    </div>
+
+    <!-- Slide 3: Project Scope & Target Scale -->
+
+    <div class="slide content-slide">
+      <div class="slide-header-bar"></div>
+      <div class="slide-branding"><figure style="width: 100%; padding: 0; "><img src="logo.png" width="160px" alt=""></figure></div>
+      <div class="slide-header">
+        <h2><i class="fas fa-ruler-combined icon"></i>Project Scope &amp; Target Scale</h2>
+      </div>
+      <div class="content-area">
+        <div class="bullet-item">
+          <div class="bullet-icon"><i class="fas fa-city"></i></div>
+          <div><strong>Large Infrastructure:</strong> Buildings, industrial parks, highways, bridges, and townships with complex multi-phase execution</div>
+        </div>
+        <div class="bullet-item">
+          <div class="bullet-icon"><i class="fas fa-users"></i></div>
+          <div><strong>Team Size:</strong> 100-10,000+ workers across multiple locations with diverse skill sets and roles</div>
+        </div>
+        <div class="bullet-item">
+          <div class="bullet-icon"><i class="fas fa-calendar-alt"></i></div>
+          <div><strong>Project Duration:</strong> 6 months to 5+ years with multiple phases and milestone deliverables</div>
+        </div>
+        <div class="bullet-item">
+          <div class="bullet-icon"><i class="fas fa-rupee-sign"></i></div>
+          <div><strong>Budget Range:</strong> ₹50 crores to ₹500+ crores with complex financial tracking requirements</div>
+        </div>
+        <div class="bullet-item">
+          <div class="bullet-icon"><i class="fas fa-map-marked-alt"></i></div>
+          <div><strong>Geographic Spread:</strong> Multiple sites across regions requiring centralized monitoring and control</div>
+        </div>
+      </div>
+      <div class="page-number">Slide 3 of 24</div>
+      <div class="progress-bar"><div class="progress-fill" style="width: 12.5%;"></div></div>
+    </div>
+
+    <!-- Slide 4: Stakeholder Ecosystem -->
+
+
+    <div class="slide content-slide">
+      <div class="slide-header-bar"></div>
+      <div class="slide-branding"><figure style="width: 100%; padding: 0; "><img src="logo.png" width="160px" alt=""></figure></div>
+      <div class="slide-header">
+        <h2><i class="fas fa-network-wired icon"></i>Stakeholder Ecosystem</h2>
+      </div>
+      <div class="category-grid">
+        <div class="category-card">
+          <h3><i class="fas fa-star"></i> Primary Stakeholders</h3>
+          <div class="items">
+            <div class="item">Project owners/clients</div>
+            <div class="item">General contractors</div>
+            <div class="item">Government regulatory bodies</div>
+            <div class="item">Financial institutions</div>
+          </div>
+        </div>
+        <div class="category-card">
+          <h3><i class="fas fa-users"></i> Secondary Stakeholders</h3>
+          <div class="items">
+            <div class="item">Local communities</div>
+            <div class="item">Environmental agencies</div>
+            <div class="item">Material suppliers</div>
+            <div class="item">Labor unions</div>
+            <div class="item">Technical consultants</div>
+          </div>
+        </div>
+        <div class="category-card" style="grid-column: span 2;">
+          <h3><i class="fas fa-handshake"></i> Supporting Stakeholders</h3>
+          <div class="items" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px;">
+            <div class="item">Media &amp; PR</div>
+            <div class="item">Legal teams</div>
+            <div class="item">Quality assurance</div>
+            <div class="item">Safety authorities</div>
+          </div>
+        </div>
+      </div>
+      <div class="page-number">Slide 4 of 24</div>
+      <div class="progress-bar"><div class="progress-fill" style="width: 16.67%;"></div></div>
+    </div>
+
+    <!-- Slide 5: Core System Modules -->
+
+
+    <div class="slide content-slide">
+      <div class="slide-header-bar"></div>
+      <div class="slide-branding"><figure style="width: 100%; padding: 0; "><img src="logo.png" width="160px" alt=""></figure></div>
+      <div class="slide-header">
+        <h2><i class="fas fa-th icon"></i>Core System Modules</h2>
+        <span class="subtitle">13 Integrated Modules with 100+ Features</span>
+      </div>
+      <div class="module-grid">
+        <div class="module-item">
+          <i class="fas fa-project-diagram icon"></i>
+          <h4>Project &amp; Site Management</h4>
+        </div>
+        <div class="module-item">
+          <i class="fas fa-file-invoice-dollar icon"></i>
+          <h4>BOQ &amp; Financial Management</h4>
+        </div>
+        <div class="module-item">
+          <i class="fas fa-user-tie icon"></i>
+          <h4>Workforce &amp; HRMS</h4>
+        </div>
+        <div class="module-item">
+          <i class="fas fa-clipboard-check icon"></i>
+          <h4>Quality, Safety &amp; Compliance</h4>
+        </div>
+        <div class="module-item">
+          <i class="fas fa-folder-open icon"></i>
+          <h4>Document &amp; Drawing Management</h4>
+        </div>
+        <div class="module-item">
+          <i class="fas fa-gavel icon"></i>
+          <h4>Tendering &amp; Bidding</h4>
+        </div>
+        <div class="module-item">
+          <i class="fas fa-file-contract icon"></i>
+          <h4>Contract &amp; Vendor Management</h4>
+        </div>
+        <div class="module-item">
+          <i class="fas fa-boxes icon"></i>
+          <h4>Resource &amp; Inventory</h4>
+        </div>
+        <div class="module-item">
+          <i class="fas fa-exchange-alt icon"></i>
+          <h4>RFI &amp; Change Management</h4>
+        </div>
+        <div class="module-item">
+          <i class="fas fa-comments icon"></i>
+          <h4>Stakeholder Communication</h4>
+        </div>
+        <div class="module-item">
+          <i class="fas fa-chart-bar icon"></i>
+          <h4>Analytics &amp; Reporting</h4>
+        </div>
+        <div class="module-item">
+          <i class="fas fa-plug icon"></i>
+          <h4>Integration Capabilities</h4>
+        </div>
+        <div class="module-item">
+          <i class="fas fa-mobile-alt icon"></i>
+          <h4>Mobile &amp; Field Applications</h4>
+        </div>
+      </div>
+      <div class="page-number">Slide 5 of 24</div>
+      <div class="progress-bar"><div class="progress-fill" style="width: 20.83%;"></div></div>
+    </div>
+
+    <!-- Slide 6: Project & Site Management -->
+
+
+    <div class="slide content-slide">
+      <div class="slide-header-bar"></div>
+      <div class="slide-branding"><figure style="width: 100%; padding: 0; "><img src="logo.png" width="160px" alt=""></figure></div>
+      <div class="slide-header">
+        <h2><i class="fas fa-project-diagram icon"></i>Project &amp; Site Management</h2>
+      </div>
+      <div class="content-area">
+        <div class="bullet-item">
+          <div class="bullet-icon"><i class="fas fa-tachometer-alt"></i></div>
+          <div>Multi-project portfolio dashboard with real-time status tracking and KPI monitoring</div>
+        </div>
+        <div class="bullet-item">
+          <div class="bullet-icon"><i class="fas fa-tasks"></i></div>
+          <div>Advanced Gantt chart scheduling with critical path analysis and dependency management</div>
+        </div>
+        <div class="bullet-item">
+          <div class="bullet-icon"><i class="fas fa-clipboard-list"></i></div>
+          <div>Daily progress logs with geo-tagged photos and automated site diary generation</div>
+        </div>
+        <div class="bullet-item">
+          <div class="bullet-icon"><i class="fas fa-truck-moving"></i></div>
+          <div>Equipment tracking with GPS integration and predictive maintenance scheduling</div>
+        </div>
+        <div class="bullet-item">
+          <div class="bullet-icon"><i class="fas fa-user-check"></i></div>
+          <div>Task assignment with automated monitoring and performance analytics</div>
+        </div>
+        <div class="bullet-item">
+          <div class="bullet-icon"><i class="fas fa-chart-line"></i></div>
+          <div>Resource optimization algorithms for workforce and equipment allocation</div>
+        </div>
+      </div>
+      <div class="page-number">Slide 6 of 24</div>
+      <div class="progress-bar"><div class="progress-fill" style="width: 25%;"></div></div>
+    </div>
+
+    <!-- Slide 7: BOQ & Financial Management -->
+
+
+    <div class="slide content-slide">
+      <div class="slide-header-bar"></div>
+      <div class="slide-branding"><figure style="width: 100%; padding: 0; "><img src="logo.png" width="160px" alt=""></figure></div>
+      <div class="slide-header">
+        <h2><i class="fas fa-file-invoice-dollar icon"></i>BOQ &amp; Financial Management</h2>
+      </div>
+      <div class="content-area">
+        <div class="bullet-item">
+          <div class="bullet-icon"><i class="fas fa-list-alt"></i></div>
+          <div>Comprehensive BOQ creation and management with quantity takeoff and rate analysis</div>
+        </div>
+        <div class="bullet-item">
+          <div class="bullet-icon"><i class="fas fa-chart-pie"></i></div>
+          <div>Real-time budget vs. actual cost tracking with variance analysis and alerts</div>
+        </div>
+        <div class="bullet-item">
+          <div class="bullet-icon"><i class="fas fa-file-invoice"></i></div>
+          <div>GST compliance and Indian accounting standards (IndAS) integration</div>
+        </div>
+        <div class="bullet-item">
+          <div class="bullet-icon"><i class="fas fa-receipt"></i></div>
+          <div>Automated invoice generation and payment tracking with vendor reconciliation</div>
+        </div>
+        <div class="bullet-item">
+          <div class="bullet-icon"><i class="fas fa-money-bill-wave"></i></div>
+          <div>Cash flow forecasting and financial risk assessment with scenario planning</div>
+        </div>
+        <div class="bullet-item">
+          <div class="bullet-icon"><i class="fas fa-globe"></i></div>
+          <div>Multi-currency support for international vendors and material procurement</div>
+        </div>
+      </div>
+      <div class="page-number">Slide 7 of 24</div>
+      <div class="progress-bar"><div class="progress-fill" style="width: 29.17%;"></div></div>
+    </div>
+
+    <!-- Slide 8: Workforce & HRMS -->
+
+
+    <div class="slide content-slide">
+      <div class="slide-header-bar"></div>
+      <div class="slide-branding"><figure style="width: 100%; padding: 0; "><img src="logo.png" width="160px" alt=""></figure></div>
+      <div class="slide-header">
+        <h2><i class="fas fa-user-tie icon"></i>Workforce &amp; HRMS</h2>
+      </div>
+      <div class="content-area">
+        <div class="bullet-item">
+          <div class="bullet-icon"><i class="fas fa-fingerprint"></i></div>
+          <div>Biometric attendance for thousands of workers with facial recognition and RFID support</div>
+        </div>
+        <div class="bullet-item">
+          <div class="bullet-icon"><i class="fas fa-money-check-alt"></i></div>
+          <div>Automated payroll with PF/ESI compliance, overtime calculations, and statutory deductions</div>
+        </div>
+        <div class="bullet-item">
+          <div class="bullet-icon"><i class="fas fa-balance-scale"></i></div>
+          <div>Labor law compliance including Contract Labor Act, BOCWA, and statutory reporting</div>
+        </div>
+        <div class="bullet-item">
+          <div class="bullet-icon"><i class="fas fa-users-cog"></i></div>
+          <div>Skills-based workforce allocation with competency mapping and resource optimization</div>
+        </div>
+        <div class="bullet-item">
+          <div class="bullet-icon"><i class="fas fa-certificate"></i></div>
+          <div>Safety training certification management with expiry alerts and renewal tracking</div>
+        </div>
+        <div class="bullet-item">
+          <div class="bullet-icon"><i class="fas fa-heartbeat"></i></div>
+          <div>Worker welfare and benefit administration including health insurance and accommodation</div>
+        </div>
+      </div>
+      <div class="page-number">Slide 8 of 24</div>
+      <div class="progress-bar"><div class="progress-fill" style="width: 33.33%;"></div></div>
+    </div>
+
+    <!-- Slide 9: Quality, Safety & Compliance -->
+
+
+    <div class="slide content-slide">
+      <div class="slide-header-bar"></div>
+      <div class="slide-branding"><figure style="width: 100%; padding: 0; "><img src="logo.png" width="160px" alt=""></figure></div>
+      <div class="slide-header">
+        <h2><i class="fas fa-shield-alt icon"></i>Quality, Safety &amp; Compliance</h2>
+      </div>
+      <div class="content-area">
+        <div class="bullet-item">
+          <div class="bullet-icon"><i class="fas fa-clipboard-check"></i></div>
+          <div>Digital inspection checklists and QA workflows with photo documentation and approvals</div>
+        </div>
+        <div class="bullet-item">
+          <div class="bullet-icon"><i class="fas fa-exclamation-triangle"></i></div>
+          <div>Incident reporting with immediate escalation to management and regulatory authorities</div>
+        </div>
+        <div class="bullet-item">
+          <div class="bullet-icon"><i class="fas fa-leaf"></i></div>
+          <div>Environmental compliance monitoring including air quality, water usage, and waste management</div>
+        </div>
+        <div class="bullet-item">
+          <div class="bullet-icon"><i class="fas fa-hard-hat"></i></div>
+          <div>Safety equipment distribution tracking with PPE compliance and inventory management</div>
+        </div>
+        <div class="bullet-item">
+          <div class="bullet-icon"><i class="fas fa-file-alt"></i></div>
+          <div>RERA and regulatory approval tracking with automated document submission and renewal</div>
+        </div>
+        <div class="bullet-item">
+          <div class="bullet-icon"><i class="fas fa-chart-bar"></i></div>
+          <div>Automated compliance reporting for government portals and audit documentation</div>
+        </div>
+      </div>
+      <div class="page-number">Slide 9 of 24</div>
+      <div class="progress-bar"><div class="progress-fill" style="width: 37.5%;"></div></div>
+    </div>
+
+    <!-- Slide 10: BIM/CAD Integration -->
+
+
+    <div class="slide content-slide">
+      <div class="slide-header-bar"></div>
+      <div class="slide-branding"><figure style="width: 100%; padding: 0; "><img src="logo.png" width="160px" alt=""></figure></div>
+      <div class="slide-header">
+        <h2><i class="fas fa-cube icon"></i>BIM/CAD Integration</h2>
+        <span class="subtitle">Native Integration Capabilities</span>
+      </div>
+      <div class="content-area">
+        <div class="bullet-item">
+          <div class="bullet-icon"><i class="fas fa-cube"></i></div>
+          <div>Autodesk Revit, AutoCAD, Navisworks integration with bi-directional data sync</div>
+        </div>
+        <div class="bullet-item">
+          <div class="bullet-icon"><i class="fas fa-cloud"></i></div>
+          <div>BIM 360/Construction Cloud connectivity for real-time collaboration and document management</div>
+        </div>
+        <div class="bullet-item">
+          <div class="bullet-icon"><i class="fas fa-sync"></i></div>
+          <div>Real-time model synchronization and automated clash detection with resolution tracking</div>
+        </div>
+        <div class="bullet-item">
+          <div class="bullet-icon"><i class="fas fa-ruler-combined"></i></div>
+          <div>3D model-based quantity takeoff with automated BOQ generation and updates</div>
+        </div>
+        <div class="bullet-item">
+          <div class="bullet-icon"><i class="fas fa-mobile-alt"></i></div>
+          <div>Mobile BIM viewing for field teams with markup and issue tracking capabilities</div>
+        </div>
+        <div class="bullet-item">
+          <div class="bullet-icon"><i class="fas fa-project-diagram"></i></div>
+          <div>Integration with Bentley, Trimble platforms for comprehensive design tool connectivity</div>
+        </div>
+      </div>
+      <div class="page-number">Slide 10 of 24</div>
+      <div class="progress-bar"><div class="progress-fill" style="width: 41.67%;"></div></div>
+    </div>
+
+    <!-- Slide 11: Technology Architecture -->
+
+
+    <div class="slide content-slide">
+      <div class="slide-header-bar"></div>
+      <div class="slide-branding"><figure style="width: 100%; padding: 0; "><img src="logo.png" width="160px" alt=""></figure></div>
+      <div class="slide-header">
+        <h2><i class="fas fa-server icon"></i>Technology Architecture</h2>
+        <span class="subtitle">Modern, Scalable Stack</span>
+      </div>
+      <div class="two-column">
+        <div class="column">
+          <div class="info-card">
+            <h3><i class="fas fa-code icon"></i>Backend</h3>
+            <ul>
+              <li>Node.js/Express or Python/Django microservices</li>
+              <li>PostgreSQL relational database</li>
+              <li>MongoDB for document storage</li>
+            </ul>
+          </div>
+          <div class="info-card">
+            <h3><i class="fas fa-desktop icon"></i>Frontend</h3>
+            <ul>
+              <li>React.js/Angular web applications</li>
+              <li>React Native/Flutter mobile apps</li>
+              <li>Responsive design framework</li>
+            </ul>
+          </div>
+          <div class="info-card">
+            <h3><i class="fas fa-cloud icon"></i>Infrastructure</h3>
+            <ul>
+              <li>Docker containers and Kubernetes orchestration</li>
+              <li>AWS/Azure/Google Cloud deployment</li>
+              <li>Auto-scaling and load balancing</li>
+            </ul>
+          </div>
+        </div>
+        <div class="column">
+          <div class="info-card">
+            <h3><i class="fas fa-lock icon"></i>Security</h3>
+            <ul>
+              <li>End-to-end encryption (AES-256)</li>
+              <li>OAuth 2.0 authentication</li>
+              <li>Role-Based Access Control (RBAC)</li>
+            </ul>
+          </div>
+          <div class="info-card">
+            <h3><i class="fas fa-bolt icon"></i>Features</h3>
+            <ul>
+              <li>Real-time updates via WebSocket</li>
+              <li>Offline capability and sync</li>
+              <li>Progressive Web App (PWA)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="page-number">Slide 11 of 24</div>
+      <div class="progress-bar"><div class="progress-fill" style="width: 45.83%;"></div></div>
+    </div>
+
+    <!-- Slide 12: Integration Ecosystem -->
+
+
+    <div class="slide content-slide">
+      <div class="slide-header-bar"></div>
+      <div class="slide-branding"><figure style="width: 100%; padding: 0; "><img src="logo.png" width="160px" alt=""></figure></div>
+      <div class="slide-header">
+        <h2><i class="fas fa-plug icon"></i>Integration Ecosystem</h2>
+        <span class="subtitle">Seamless Connectivity</span>
+      </div>
+      <div class="feature-grid" style="grid-template-columns: repeat(2, 1fr);">
+        <div class="feature-card">
+          <i class="fas fa-file-invoice-dollar icon"></i>
+          <h4>ERP &amp; Accounting</h4>
+          <p>Tally, SAP, QuickBooks integration for financial data sync</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-cube icon"></i>
+          <h4>Design Tools</h4>
+          <p>BIM 360, Procore, Primavera P6, MS Project connectivity</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-landmark icon"></i>
+          <h4>Government Portals</h4>
+          <p>E-procurement, approval systems, GST filing automation</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-credit-card icon"></i>
+          <h4>Payment Gateways</h4>
+          <p>Razorpay, PayU, and custom APIs for payment processing</p>
+        </div>
+      </div>
+      <div class="highlight-box" style="margin-top: 30px;">
+        <h3><i class="fas fa-sync-alt icon"></i>Pre-built Connectors</h3>
+        <p>Our comprehensive API library provides ready-to-use integrations with all major enterprise systems, design tools, and Indian government platforms. Custom APIs available for specialized requirements.</p>
+      </div>
+      <div class="page-number">Slide 12 of 24</div>
+      <div class="progress-bar"><div class="progress-fill" style="width: 50%;"></div></div>
+    </div>
+
+    <!-- Slide 13: Implementation Roadmap -->
+
+
+    <div class="slide content-slide">
+      <div class="slide-header-bar"></div>
+      <div class="slide-branding"><figure style="width: 100%; padding: 0; "><img src="logo.png" width="160px" alt=""></figure></div>
+      <div class="slide-header">
+        <h2><i class="fas fa-road icon"></i>Implementation Roadmap</h2>
+        <span class="subtitle">Three-Phase Approach (12 Months)</span>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-marker">1</div>
+          <div class="timeline-content">
+            <h4>Phase 1 (Months 1-5) - Foundation</h4>
+            <p>Core Project Management, Finance modules, HRMS, Mobile application development, and comprehensive user training programs</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-marker">2</div>
+          <div class="timeline-content">
+            <h4>Phase 2 (Months 6-9) - Enhancement</h4>
+            <p>Advanced BOQ Management, Vendor Management Portal, Analytics Dashboard, and third-party system integrations</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-marker">3</div>
+          <div class="timeline-content">
+            <h4>Phase 3 (Months 10-12) - Advanced</h4>
+            <p>AI-powered Analytics, IoT sensor integration, Full BIM Integration, and predictive maintenance capabilities</p>
+          </div>
+        </div>
+      </div>
+      <div class="page-number">Slide 13 of 24</div>
+      <div class="progress-bar"><div class="progress-fill" style="width: 54.17%;"></div></div>
+    </div>
+
+    <!-- Slide 14: Regulatory Compliance -->
+
+
+    <div class="slide content-slide">
+      <div class="slide-header-bar"></div>
+      <div class="slide-branding"><figure style="width: 100%; padding: 0; "><img src="logo.png" width="160px" alt=""></figure></div>
+      <div class="slide-header">
+        <h2><i class="fas fa-balance-scale icon"></i>Regulatory Compliance</h2>
+        <span class="subtitle">Comprehensive Indian Compliance</span>
+      </div>
+      <div class="category-grid">
+        <div class="category-card">
+          <h3><i class="fas fa-flag"></i> Central Regulations</h3>
+          <div class="items">
+            <div class="item">Environmental Protection Act</div>
+            <div class="item">Building &amp; Other Construction Workers Act (BOCWA)</div>
+            <div class="item">Contract Labor Act</div>
+            <div class="item">Real Estate Regulation Act (RERA)</div>
+          </div>
+        </div>
+        <div class="category-card">
+          <h3><i class="fas fa-map-marker-alt"></i> State/Local</h3>
+          <div class="items">
+            <div class="item">State building codes and bylaws</div>
+            <div class="item">Municipal approvals and permits</div>
+            <div class="item">Fire safety and water board clearances</div>
+          </div>
+        </div>
+        <div class="category-card">
+          <h3><i class="fas fa-calculator"></i> Tax &amp; Financial</h3>
+          <div class="items">
+            <div class="item">GST compliance and automated filing</div>
+            <div class="item">TDS calculations and reporting</div>
+            <div class="item">PF and ESI statutory compliance</div>
+          </div>
+        </div>
+        <div class="category-card">
+          <h3><i class="fas fa-certificate"></i> Industry Standards</h3>
+          <div class="items">
+            <div class="item">IS Codes compliance</div>
+            <div class="item">National Building Code (NBC)</div>
+            <div class="item">Bureau of Indian Standards (BIS)</div>
+            <div class="item">CPWD specifications</div>
+          </div>
+        </div>
+      </div>
+      <div class="page-number">Slide 14 of 24</div>
+      <div class="progress-bar"><div class="progress-fill" style="width: 58.33%;"></div></div>
+    </div>
+
+    <!-- Slide 15: Multi-Level Dashboards -->
+
+
+    <div class="slide content-slide">
+      <div class="slide-header-bar"></div>
+      <div class="slide-branding"><figure style="width: 100%; padding: 0; "><img src="logo.png" width="160px" alt=""></figure></div>
+      <div class="slide-header">
+        <h2><i class="fas fa-chart-line icon"></i>Multi-Level Dashboards</h2>
+        <span class="subtitle">Role-Based Information Access</span>
+      </div>
+      <div class="feature-grid" style="grid-template-columns: repeat(2, 1fr);">
+        <div class="feature-card">
+          <i class="fas fa-user-tie icon"></i>
+          <h4>Executive Dashboard</h4>
+          <p>Portfolio health, profitability analysis, risk indicators, and compliance status for strategic decision-making</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-project-diagram icon"></i>
+          <h4>Project Manager Dashboard</h4>
+          <p>Progress tracking, budget variance, resource allocation, vendor performance, and timeline management</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-hard-hat icon"></i>
+          <h4>Site Engineer Dashboard</h4>
+          <p>Daily work logs, material tracking, equipment status, safety incidents, and quality checkpoints</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-handshake icon"></i>
+          <h4>Client Portal</h4>
+          <p>Milestone achievements, budget status, compliance documents, and project documentation access</p>
+        </div>
+      </div>
+      <div class="highlight-box" style="margin-top: 30px;">
+        <h3><i class="fas fa-eye icon"></i>Real-Time Visibility</h3>
+        <p>Each dashboard is customized for specific roles with drill-down capabilities, real-time data updates, and interactive visualizations for informed decision-making at every level.</p>
+      </div>
+      <div class="page-number">Slide 15 of 24</div>
+      <div class="progress-bar"><div class="progress-fill" style="width: 62.5%;"></div></div>
+    </div>
+
+    <!-- Slide 16: Financial Investment -->
+
+
+    <div class="slide content-slide">
+      <div class="slide-header-bar"></div>
+      <div class="slide-branding"><figure style="width: 100%; padding: 0; "><img src="logo.png" width="160px" alt=""></figure></div>
+      <div class="slide-header">
+        <h2><i class="fas fa-rupee-sign icon"></i>Financial Investment</h2>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-box">
+          <div class="number">₹50,00,000</div>
+          <div class="label">Total Investment</div>
+        </div>
+        <div class="stat-box">
+          <div class="number">40%</div>
+          <div class="label">Phase 1 Foundation</div>
+        </div>
+        <div class="stat-box">
+          <div class="number">36%</div>
+          <div class="label">Phase 2 Enhancement</div>
+        </div>
+        <div class="stat-box">
+          <div class="number">24%</div>
+          <div class="label">Phase 3 Advanced</div>
+        </div>
+      </div>
+      <div class="cost-grid" style="margin-top: 30px;">
+        <div class="cost-item">
+          <span class="item-name">Core ERP Development</span>
+          <span class="item-cost">₹15L</span>
+        </div>
+        <div class="cost-item">
+          <span class="item-name">BIM/CAD Integration</span>
+          <span class="item-cost">₹8L</span>
+        </div>
+        <div class="cost-item">
+          <span class="item-name">Mobile Applications</span>
+          <span class="item-cost">₹6L</span>
+        </div>
+        <div class="cost-item">
+          <span class="item-name">Analytics Platform</span>
+          <span class="item-cost">₹5L</span>
+        </div>
+        <div class="cost-item">
+          <span class="item-name">Third-party Integrations</span>
+          <span class="item-cost">₹4L</span>
+        </div>
+        <div class="cost-item">
+          <span class="item-name">QA &amp; Testing</span>
+          <span class="item-cost">₹3.5L</span>
+        </div>
+        <div class="cost-item">
+          <span class="item-name">Deployment &amp; Infrastructure</span>
+          <span class="item-cost">₹2.5L</span>
+        </div>
+        <div class="cost-item">
+          <span class="item-name">Training Programs</span>
+          <span class="item-cost">₹2L</span>
+        </div>
+        <div class="cost-item">
+          <span class="item-name">Documentation</span>
+          <span class="item-cost">₹1.5L</span>
+        </div>
+        <div class="cost-item">
+          <span class="item-name">Project Management</span>
+          <span class="item-cost">₹2.5L</span>
+        </div>
+      </div>
+      <div class="page-number">Slide 16 of 24</div>
+      <div class="progress-bar"><div class="progress-fill" style="width: 66.67%;"></div></div>
+    </div>
+
+    <!-- Slide 17: Return on Investment -->
+
+
+    <div class="slide content-slide">
+      <div class="slide-header-bar"></div>
+      <div class="slide-branding"><figure style="width: 100%; padding: 0; "><img src="logo.png" width="160px" alt=""></figure></div>
+      <div class="slide-header">
+        <h2><i class="fas fa-chart-line icon"></i>Return on Investment</h2>
+        <span class="subtitle">Proven Results</span>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-box">
+          <div class="number">15-25%</div>
+          <div class="label">Reduction in Project Delivery Time</div>
+        </div>
+        <div class="stat-box">
+          <div class="number">20-30%</div>
+          <div class="label">Improvement in Cost Control</div>
+        </div>
+        <div class="stat-box">
+          <div class="number">40-50%</div>
+          <div class="label">Reduction in Administrative Overhead</div>
+        </div>
+        <div class="stat-box">
+          <div class="number">60-70%</div>
+          <div class="label">Improvement in Compliance Readiness</div>
+        </div>
+      </div>
+      <div class="highlight-box" style="margin-top: 35px;">
+        <h3><i class="fas fa-trophy icon"></i>25-35% Increase in Overall Profitability</h3>
+        <p>Our clients consistently achieve dramatic improvements across all operational metrics. Streamlined processes, real-time visibility, and automated compliance reduce costs while accelerating project delivery. The comprehensive ROI is typically realized within 18-24 months of full deployment.</p>
+      </div>
+      <div class="page-number">Slide 17 of 24</div>
+      <div class="progress-bar"><div class="progress-fill" style="width: 70.83%;"></div></div>
+    </div>
+
+    <!-- Slide 18: Support & Maintenance -->
+
+
+    <div class="slide content-slide">
+      <div class="slide-header-bar"></div>
+      <div class="slide-branding"><figure style="width: 100%; padding: 0; "><img src="logo.png" width="160px" alt=""></figure></div>
+      <div class="slide-header">
+        <h2><i class="fas fa-life-ring icon"></i>Support &amp; Maintenance</h2>
+        <span class="subtitle">Comprehensive Support Structure</span>
+      </div>
+      <div class="content-area">
+        <div class="bullet-item">
+          <div class="bullet-icon"><i class="fas fa-headset"></i></div>
+          <div>24/7 Tier 1-3 Support with guaranteed response times and dedicated account managers</div>
+        </div>
+        <div class="bullet-item">
+          <div class="bullet-icon"><i class="fas fa-sync-alt"></i></div>
+          <div>Monthly updates with new features and immediate security patches for vulnerabilities</div>
+        </div>
+        <div class="bullet-item">
+          <div class="bullet-icon"><i class="fas fa-tachometer-alt"></i></div>
+          <div>Quarterly performance optimization reviews and infrastructure health assessments</div>
+        </div>
+        <div class="bullet-item">
+          <div class="bullet-icon"><i class="fas fa-balance-scale"></i></div>
+          <div>Automatic compliance updates when regulations change at Central or State level</div>
+        </div>
+        <div class="bullet-item">
+          <div class="bullet-icon"><i class="fas fa-graduation-cap"></i></div>
+          <div>Role-specific training programs with online learning platform and certification</div>
+        </div>
+      </div>
+      <div class="page-number">Slide 18 of 24</div>
+      <div class="progress-bar"><div class="progress-fill" style="width: 75%;"></div></div>
+    </div>
+
+    <!-- Slide 19: Quality Assurance -->
+
+
+    <div class="slide content-slide">
+      <div class="slide-header-bar"></div>
+      <div class="slide-branding"><figure style="width: 100%; padding: 0; "><img src="logo.png" width="160px" alt=""></figure></div>
+      <div class="slide-header">
+        <h2><i class="fas fa-check-circle icon"></i>Quality Assurance</h2>
+        <span class="subtitle">Robust QA Framework</span>
+      </div>
+      <div class="content-area">
+        <div class="bullet-item">
+          <div class="bullet-icon"><i class="fas fa-vial"></i></div>
+          <div>Automated regression testing and continuous integration/deployment pipelines</div>
+        </div>
+        <div class="bullet-item">
+          <div class="bullet-icon"><i class="fas fa-tachometer-alt"></i></div>
+          <div>Performance testing with load simulation for 10,000+ concurrent users</div>
+        </div>
+        <div class="bullet-item">
+          <div class="bullet-icon"><i class="fas fa-shield-alt"></i></div>
+          <div>Security testing including penetration tests and vulnerability assessments</div>
+        </div>
+        <div class="bullet-item">
+          <div class="bullet-icon"><i class="fas fa-clipboard-check"></i></div>
+          <div>User Acceptance Testing (UAT) with your team before each release</div>
+        </div>
+        <div class="bullet-item">
+          <div class="bullet-icon"><i class="fas fa-award"></i></div>
+          <div>99.9% uptime SLA with guaranteed response times under 2 seconds</div>
+        </div>
+        <div class="bullet-item">
+          <div class="bullet-icon"><i class="fas fa-database"></i></div>
+          <div>Data security with AES-256 encryption, automated backups, and disaster recovery</div>
+        </div>
+      </div>
+      <div class="page-number">Slide 19 of 24</div>
+      <div class="progress-bar"><div class="progress-fill" style="width: 79.17%;"></div></div>
+    </div>
+
+    <!-- Slide 20: Competitive Advantages -->
+
+
+    <div class="slide content-slide">
+      <div class="slide-header-bar"></div>
+      <div class="slide-branding"><figure style="width: 100%; padding: 0; "><img src="logo.png" width="160px" alt=""></figure></div>
+      <div class="slide-header">
+        <h2><i class="fas fa-medal icon"></i>Competitive Advantages</h2>
+        <span class="subtitle">Why Choose Our Solution</span>
+      </div>
+      <div class="content-area">
+        <div class="bullet-item">
+          <div class="bullet-icon"><i class="fas fa-hard-hat"></i></div>
+          <div>Construction-focused design specifically built for infrastructure projects, not generic ERP</div>
+        </div>
+        <div class="bullet-item">
+          <div class="bullet-icon"><i class="fas fa-flag"></i></div>
+          <div>Deep Indian regulatory expertise with built-in compliance for all Central and State laws</div>
+        </div>
+        <div class="bullet-item">
+          <div class="bullet-icon"><i class="fas fa-users"></i></div>
+          <div>Optimized for 1000+ worker projects with proven scalability and multi-site coordination</div>
+        </div>
+        <div class="bullet-item">
+          <div class="bullet-icon"><i class="fas fa-brain"></i></div>
+          <div>AI-powered predictive analytics for project delays, cost overruns, and resource optimization</div>
+        </div>
+        <div class="bullet-item">
+          <div class="bullet-icon"><i class="fas fa-microchip"></i></div>
+          <div>IoT integration for real-time equipment monitoring, environmental sensors, and asset tracking</div>
+        </div>
+        <div class="bullet-item">
+          <div class="bullet-icon"><i class="fas fa-cloud"></i></div>
+          <div>Mobile-first, cloud-native architecture with offline capabilities for remote sites</div>
+        </div>
+      </div>
+      <div class="page-number">Slide 20 of 24</div>
+      <div class="progress-bar"><div class="progress-fill" style="width: 83.33%;"></div></div>
+    </div>
+
+    <!-- Slide 21: Success Metrics -->
+
+
+    <div class="slide content-slide">
+      <div class="slide-header-bar"></div>
+      <div class="slide-branding"><figure style="width: 100%; padding: 0; "><img src="logo.png" width="160px" alt=""></figure></div>
+      <div class="slide-header">
+        <h2><i class="fas fa-bullseye icon"></i>Success Metrics</h2>
+        <span class="subtitle">Measurable Outcomes</span>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-box">
+          <div class="number">90%+</div>
+          <div class="label">User Adoption Within 6 Months</div>
+        </div>
+        <div class="stat-box">
+          <div class="number">99.9%</div>
+          <div class="label">System Uptime Guarantee</div>
+        </div>
+        <div class="stat-box">
+          <div class="number">&lt;2s</div>
+          <div class="label">Average Response Time</div>
+        </div>
+        <div class="stat-box">
+          <div class="number">20%+</div>
+          <div class="label">Reduction in Admin Costs</div>
+        </div>
+        <div class="stat-box">
+          <div class="number">100%</div>
+          <div class="label">Regulatory Compliance Rate</div>
+        </div>
+        <div class="stat-box">
+          <div class="number">95%+</div>
+          <div class="label">Customer Satisfaction Score</div>
+        </div>
+      </div>
+      <div class="highlight-box" style="margin-top: 30px;">
+        <h3><i class="fas fa-chart-line icon"></i>Proven Track Record</h3>
+        <p>Our success metrics are backed by real implementations across multiple large-scale infrastructure projects. We measure and report on KPIs monthly to ensure continuous value delivery.</p>
+      </div>
+      <div class="page-number">Slide 21 of 24</div>
+      <div class="progress-bar"><div class="progress-fill" style="width: 87.5%;"></div></div>
+    </div>
+
+    <!-- Slide 22: Next Steps -->
+
+
+    <div class="slide content-slide">
+      <div class="slide-header-bar"></div>
+      <div class="slide-branding"><figure style="width: 100%; padding: 0; "><img src="logo.png" width="160px" alt=""></figure></div>
+      <div class="slide-header">
+        <h2><i class="fas fa-forward icon"></i>Next Steps</h2>
+        <span class="subtitle">Project Initiation Plan</span>
+      </div>
+      <div class="content-area">
+        <div class="bullet-item">
+          <div class="bullet-icon"><i class="fas fa-users"></i></div>
+          <div><strong>Step 1:</strong> Detailed Requirements Workshop (2 days) with all key stakeholders</div>
+        </div>
+        <div class="bullet-item">
+          <div class="bullet-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <div><strong>Step 2:</strong> Pilot Site Selection (1-2 sites) for phased rollout and validation</div>
+        </div>
+        <div class="bullet-item">
+          <div class="bullet-icon"><i class="fas fa-laptop-code"></i></div>
+          <div><strong>Step 3:</strong> Technology Assessment and infrastructure compatibility review</div>
+        </div>
+        <div class="bullet-item">
+          <div class="bullet-icon"><i class="fas fa-user-friends"></i></div>
+          <div><strong>Step 4:</strong> Team Formation with dedicated resources from both organizations</div>
+        </div>
+        <div class="bullet-item">
+          <div class="bullet-icon"><i class="fas fa-file-signature"></i></div>
+          <div><strong>Step 5:</strong> Contract Finalization and project governance establishment</div>
+        </div>
+      </div>
+      <div class="highlight-box" style="margin-top: 30px;">
+        <h3><i class="fas fa-calendar-alt icon"></i>Implementation Timeline</h3>
+        <p><strong>Week 1-2:</strong> Contract &amp; Planning | <strong>Week 3-4:</strong> Requirements Gathering | <strong>Month 2:</strong> Environment Setup | <strong>Month 3-5:</strong> Development &amp; MVP Delivery</p>
+      </div>
+      <div class="page-number">Slide 22 of 24</div>
+      <div class="progress-bar"><div class="progress-fill" style="width: 91.67%;"></div></div>
+    </div>
+
+    <!-- Slide 23: Conclusion -->
+
+
+    <div class="slide content-slide">
+      <div class="slide-header-bar"></div>
+      <div class="slide-branding"><figure style="width: 100%; padding: 0; "><img src="logo.png" width="160px" alt=""></figure></div>
+      <div class="slide-header">
+        <h2><i class="fas fa-flag-checkered icon"></i>Conclusion</h2>
+        <span class="subtitle">Strategic Investment in Digital Transformation</span>
+      </div>
+      <div class="content-area">
+        <div class="bullet-item">
+          <div class="bullet-icon"><i class="fas fa-hard-hat"></i></div>
+          <div>Purpose-built for Indian infrastructure sector with deep domain expertise</div>
+        </div>
+        <div class="bullet-item">
+          <div class="bullet-icon"><i class="fas fa-check-double"></i></div>
+          <div>Comprehensive compliance and integration with all regulatory requirements</div>
+        </div>
+        <div class="bullet-item">
+          <div class="bullet-icon"><i class="fas fa-expand-arrows-alt"></i></div>
+          <div>Scalable, secure, and future-ready architecture for long-term growth</div>
+        </div>
+        <div class="bullet-item">
+          <div class="bullet-icon"><i class="fas fa-chart-line"></i></div>
+          <div>Rapid ROI with 25-35% profitability improvement within 24 months</div>
+        </div>
+        <div class="bullet-item">
+          <div class="bullet-icon"><i class="fas fa-handshake"></i></div>
+          <div>Partner with us to lead the construction technology revolution</div>
+        </div>
+      </div>
+      <div class="highlight-box" style="margin-top: 35px;">
+        <h3><i class="fas fa-rocket icon"></i>Transform Your Construction Business Today</h3>
+        <p>This comprehensive ERP solution will modernize your operations, ensure compliance, and position your organization as an industry leader. Contact us to begin your digital transformation journey.</p>
+      </div>
+      <div class="page-number">Slide 23 of 24</div>
+      <div class="progress-bar"><div class="progress-fill" style="width: 95.83%;"></div></div>
+    </div>
+
+    <!-- Slide 24: Thank You & Contact -->
+
+    <div class="slide contact-slide">
+      <h1>Thank You</h1>
+      <div class="contact-info">
+        <h3>Let's Build the Future Together</h3>
+        <div class="contact-fields">
+          <div class="contact-field">
+            <label>Company Logo</label>
+            <div class="value"><figure style="width: 100%; padding: 0; "><img src="logo.png" width="160px" alt=""></figure></div>
+          </div>
+          <div class="contact-field">
+            <label>Lead Consultant</label>
+            <div class="value">Putul Kumar</div>
+          </div>
+          <div class="contact-field">
+            <label>Email Address</label>
+            <div class="value">info@techoma.io</div>
+          </div>
+          <div class="contact-field">
+            <label>Phone Number</label>
+            <div class="value">+91 931 549 4820</div>
+          </div>
+          <div class="contact-field" style="grid-column: span 2;">
+            <label>Company Name</label>
+            <div class="value">Techoma Technology Pvt Ltd</div>
+          </div>
+        </div>
+        <!-- <p style="margin-top: 25px; font-size: 0.9em; opacity: 0.85;">Proposal valid for 60 days from date of presentation</p> -->
+      </div>
+      <div class="page-number">Slide 24 of 24</div>
+      <div class="progress-bar"><div class="progress-fill" style="width: 100%;"></div></div>
+    </div>
+
+    <!-- Navigation Controls -->
+    <div class="nav-controls">
+      <button class="nav-btn" id="prevBtn" onclick="changeSlide(-1)">
+        <i class="fas fa-chevron-left"></i>
+        Previous
+      </button>
+      <div class="slide-counter">
+        <span id="currentSlide">1</span> / <span id="totalSlides">24</span>
+      </div>
+      <button class="nav-btn" id="nextBtn" onclick="changeSlide(1)">
+        Next
+        <i class="fas fa-chevron-right"></i>
+      </button>
+    </div>
+  </div>
+
+  <script>
+    let currentSlideIndex = 0;
+    const slides = document.querySelectorAll('.slide');
+    const totalSlides = slides.length;
+
+    document.getElementById('totalSlides').textContent = totalSlides;
+
+    function showSlide(index) {
+      // Hide all slides
+      slides.forEach(slide => slide.classList.remove('active'));
+      
+      // Show current slide
+      slides[index].classList.add('active');
+      
+      // Update counter
+      document.getElementById('currentSlide').textContent = index + 1;
+      
+      // Update button states
+      document.getElementById('prevBtn').disabled = index === 0;
+      document.getElementById('nextBtn').disabled = index === totalSlides - 1;
+      
+      // Scroll to top smoothly
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function changeSlide(direction) {
+      currentSlideIndex += direction;
+      
+      // Boundary checks
+      if (currentSlideIndex < 0) currentSlideIndex = 0;
+      if (currentSlideIndex >= totalSlides) currentSlideIndex = totalSlides - 1;
+      
+      showSlide(currentSlideIndex);
+    }
+
+    // Keyboard navigation
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') {
+        changeSlide(-1);
+      } else if (event.key === 'ArrowRight' || event.key === 'ArrowDown' || event.key === ' ') {
+        event.preventDefault();
+        changeSlide(1);
+      } else if (event.key === 'Home') {
+        currentSlideIndex = 0;
+        showSlide(0);
+      } else if (event.key === 'End') {
+        currentSlideIndex = totalSlides - 1;
+        showSlide(totalSlides - 1);
+      }
+    });
+
+    // Touch/swipe support for mobile
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    document.addEventListener('touchstart', function(event) {
+      touchStartX = event.changedTouches[0].screenX;
+    });
+
+    document.addEventListener('touchend', function(event) {
+      touchEndX = event.changedTouches[0].screenX;
+      handleSwipe();
+    });
+
+    function handleSwipe() {
+      if (touchEndX < touchStartX - 50) {
+        changeSlide(1); // Swipe left = next
+      }
+      if (touchEndX > touchStartX + 50) {
+        changeSlide(-1); // Swipe right = previous
+      }
+    }
+
+    // Initialize
+    showSlide(0);
+  </script>
+</body>
+</html>
