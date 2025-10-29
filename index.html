@@ -117,9 +117,9 @@
 
     .logo-placeholder {
       width: 180px;
-      height: 100px;
+      height: 80px;
       background: rgba(255,255,255,0.15);
-      border: 3px dashed rgba(255,255,255,0.4);
+      /* border: 3px dashed rgba(255,255,255,0.4); */
       border-radius: 16px;
       display: flex;
       align-items: center;
@@ -129,6 +129,7 @@
       position: relative;
       z-index: 1;
       backdrop-filter: blur(10px);
+      padding-top: 10px;
     }
 
     /* Header Bar */
@@ -144,14 +145,8 @@
     .slide-branding {
       position: absolute;
       top: 25px;
-      right: 40px;
-      padding: 10px 20px;
-      background: rgba(255,255,255,0.95);
-      border-radius: 8px;
-      border: 2px dashed var(--primary-teal);
-      font-size: 0.75em;
-      color: var(--text-medium);
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      right: 40px; 
+     
     }
 
     /* Content Slides */
@@ -733,7 +728,7 @@
       backdrop-filter: blur(10px);
       padding: 40px 50px;
       border-radius: 20px;
-      border: 2px dashed rgba(255,255,255,0.4);
+      /* border: 2px dashed rgba(255,255,255,0.4); */
       margin-top: 30px;
     }
 
@@ -754,7 +749,7 @@
       background: rgba(255,255,255,0.1);
       padding: 15px 20px;
       border-radius: 10px;
-      border: 1px dashed rgba(255,255,255,0.3);
+      /* border: 1px dashed rgba(255,255,255,0.3); */
     }
 
     .contact-field label {
@@ -820,7 +815,7 @@
   <div class="presentation-container" id="presentation">
     <!-- Slide 1: Title Slide -->
     <div class="slide active title-slide">
-      <h1>Infrastructure &amp; Roads &amp; Buildings<br>(R&amp;B) ERP System</h1>
+      <h1>Infrastructure ERP System</h1>
       <div class="subtitle">Comprehensive Solution Overview for Large-Scale Construction Projects</div>
       <div class="logo-placeholder"><figure style="width: 100%; padding: 0; "><img src="logo.png" width="160px" alt=""></figure></div>
       <div class="page-number">Slide 1 of 24</div>
@@ -946,7 +941,7 @@
       <div class="slide-branding"><figure style="width: 100%; padding: 0; "><img src="logo.png" width="160px" alt=""></figure></div>
       <div class="slide-header">
         <h2><i class="fas fa-th icon"></i>Core System Modules</h2>
-        <span class="subtitle">13 Integrated Modules with 100+ Features</span>
+        <span class="subtitle">12 Integrated Modules with 100+ Features</span>
       </div>
       <div class="module-grid">
         <div class="module-item">
@@ -969,10 +964,10 @@
           <i class="fas fa-folder-open icon"></i>
           <h4>Document &amp; Drawing Management</h4>
         </div>
-        <div class="module-item">
+        <!-- <div class="module-item">
           <i class="fas fa-gavel icon"></i>
           <h4>Tendering &amp; Bidding</h4>
-        </div>
+        </div> -->
         <div class="module-item">
           <i class="fas fa-file-contract icon"></i>
           <h4>Contract &amp; Vendor Management</h4>
@@ -999,7 +994,7 @@
         </div>
         <div class="module-item">
           <i class="fas fa-mobile-alt icon"></i>
-          <h4>Mobile &amp; Field Applications</h4>
+          <h4>Mobile Ready Design</h4>
         </div>
       </div>
       <div class="page-number">Slide 5 of 24</div>
@@ -1030,7 +1025,7 @@
         </div>
         <div class="bullet-item">
           <div class="bullet-icon"><i class="fas fa-truck-moving"></i></div>
-          <div>Equipment tracking with GPS integration and predictive maintenance scheduling</div>
+          <div>Equipment tracking and predictive maintenance scheduling</div>
         </div>
         <div class="bullet-item">
           <div class="bullet-icon"><i class="fas fa-user-check"></i></div>
@@ -1075,10 +1070,10 @@
           <div class="bullet-icon"><i class="fas fa-money-bill-wave"></i></div>
           <div>Cash flow forecasting and financial risk assessment with scenario planning</div>
         </div>
-        <div class="bullet-item">
+        <!-- <div class="bullet-item">
           <div class="bullet-icon"><i class="fas fa-globe"></i></div>
           <div>Multi-currency support for international vendors and material procurement</div>
-        </div>
+        </div> -->
       </div>
       <div class="page-number">Slide 7 of 24</div>
       <div class="progress-bar"><div class="progress-fill" style="width: 29.17%;"></div></div>
@@ -1096,7 +1091,7 @@
       <div class="content-area">
         <div class="bullet-item">
           <div class="bullet-icon"><i class="fas fa-fingerprint"></i></div>
-          <div>Biometric attendance for thousands of workers with facial recognition and RFID support</div>
+          <div>Biometric attendance for thousands of workers with Geo-tagging</div>
         </div>
         <div class="bullet-item">
           <div class="bullet-icon"><i class="fas fa-money-check-alt"></i></div>
@@ -1217,25 +1212,17 @@
           <div class="info-card">
             <h3><i class="fas fa-code icon"></i>Backend</h3>
             <ul>
-              <li>Node.js/Express or Python/Django microservices</li>
+              <li>Python/Django microservices</li>
               <li>PostgreSQL relational database</li>
-              <li>MongoDB for document storage</li>
+              <li>Whitenoise for document storage</li>
             </ul>
           </div>
           <div class="info-card">
             <h3><i class="fas fa-desktop icon"></i>Frontend</h3>
             <ul>
-              <li>React.js/Angular web applications</li>
-              <li>React Native/Flutter mobile apps</li>
+              <li>React.js/Djsango web applications</li>
+              <li>PWA Mobile Apps</li>
               <li>Responsive design framework</li>
-            </ul>
-          </div>
-          <div class="info-card">
-            <h3><i class="fas fa-cloud icon"></i>Infrastructure</h3>
-            <ul>
-              <li>Docker containers and Kubernetes orchestration</li>
-              <li>AWS/Azure/Google Cloud deployment</li>
-              <li>Auto-scaling and load balancing</li>
             </ul>
           </div>
         </div>
@@ -1252,7 +1239,7 @@
             <h3><i class="fas fa-bolt icon"></i>Features</h3>
             <ul>
               <li>Real-time updates via WebSocket</li>
-              <li>Offline capability and sync</li>
+              <li>Reports by using Datatables</li>
               <li>Progressive Web App (PWA)</li>
             </ul>
           </div>
@@ -1276,7 +1263,7 @@
         <div class="feature-card">
           <i class="fas fa-file-invoice-dollar icon"></i>
           <h4>ERP &amp; Accounting</h4>
-          <p>Tally, SAP, QuickBooks integration for financial data sync</p>
+          <p>Tally integration for financial data sync</p>
         </div>
         <div class="feature-card">
           <i class="fas fa-cube icon"></i>
@@ -1310,27 +1297,27 @@
       <div class="slide-branding"><figure style="width: 100%; padding: 0; "><img src="logo.png" width="160px" alt=""></figure></div>
       <div class="slide-header">
         <h2><i class="fas fa-road icon"></i>Implementation Roadmap</h2>
-        <span class="subtitle">Three-Phase Approach (12 Months)</span>
+        <span class="subtitle">Three-Phase Approach </span>
       </div>
       <div class="timeline">
         <div class="timeline-item">
           <div class="timeline-marker">1</div>
           <div class="timeline-content">
-            <h4>Phase 1 (Months 1-5) - Foundation</h4>
+            <h4>Phase 1 - Foundation</h4>
             <p>Core Project Management, Finance modules, HRMS, Mobile application development, and comprehensive user training programs</p>
           </div>
         </div>
         <div class="timeline-item">
           <div class="timeline-marker">2</div>
           <div class="timeline-content">
-            <h4>Phase 2 (Months 6-9) - Enhancement</h4>
+            <h4>Phase 2 - Enhancement</h4>
             <p>Advanced BOQ Management, Vendor Management Portal, Analytics Dashboard, and third-party system integrations</p>
           </div>
         </div>
         <div class="timeline-item">
           <div class="timeline-marker">3</div>
           <div class="timeline-content">
-            <h4>Phase 3 (Months 10-12) - Advanced</h4>
+            <h4>Phase 3 - Advanced</h4>
             <p>AI-powered Analytics, IoT sensor integration, Full BIM Integration, and predictive maintenance capabilities</p>
           </div>
         </div>
@@ -1390,8 +1377,6 @@
     </div>
 
     <!-- Slide 15: Multi-Level Dashboards -->
-
-
     <div class="slide content-slide">
       <div class="slide-header-bar"></div>
       <div class="slide-branding"><figure style="width: 100%; padding: 0; "><img src="logo.png" width="160px" alt=""></figure></div>
@@ -1786,8 +1771,8 @@
         <h3>Let's Build the Future Together</h3>
         <div class="contact-fields">
           <div class="contact-field">
-            <label>Company Logo</label>
-            <div class="value"><figure style="width: 100%; padding: 0; "><img src="logo.png" width="160px" alt=""></figure></div>
+            <!-- <label>Company Logo</label> -->
+            <div class="value"><figure style="width: 100%; padding: 0; "><img src="logo.png" style="margin-bottom: -5px;" width="160px"      alt=""></figure></div>
           </div>
           <div class="contact-field">
             <label>Lead Consultant</label>
